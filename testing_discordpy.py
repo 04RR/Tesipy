@@ -2,15 +2,8 @@ import discord
 import data_stocks as ds
 import stock_data_india as sdi
 
-# id  710894873254821899
-# token  NzEwODk0ODczMjU0ODIxODk5.Xr7Hbg.ID55xw36W8xB2eUulHdwvzmCE5M
-# 67648
 
-# https://discordapp.com/oauth2/authorize?client_id=710894873254821899&scope=bot&permissions=67648
-
-#print(discord.__version__)  # check to make sure at least once you're on the right version!
-
-token =  'NzEwODk0ODczMjU0ODIxODk5.Xr7Hbg.ID55xw36W8xB2eUulHdwvzmCE5M' # I've opted to just save my token to a text file. 
+token =  'YOUR TOKEN'  
 
 client = discord.Client()  # starts the discord client.
 
@@ -31,12 +24,6 @@ async def on_message(message):  # event that happens per any message.
 async def on_message(message):  # event that happens per any message.
     print(f"{message.channel}: {message.author}: {message.author.name}: {message.content}")
     try:
-        if "!greet" in message.content.lower():
-            await message.channel.send('Sup cunt!')
-        elif "!diss" in message.content.lower():
-            await message.channel.send('Fuck off bitch')
-        elif "!madhen" in message.content.lower():
-            await message.channel.send('B L A C K  L I V E S  M A T T E R.')
         elif "!quit" in message.content.lower():
             await client.close()
         elif "!stockpindia" in message.content.lower():
