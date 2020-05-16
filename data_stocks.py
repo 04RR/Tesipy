@@ -1,0 +1,60 @@
+import pandas_datareader.data as web
+
+symbols = {
+    'Microsoft': 'MSFT', 
+    'Apple': 'AAPL', 
+    'Amazon': 'AMZN', 
+    'Alphabet': 'GOOGL', 
+    'Facebook': 'FB', 
+    'Alibaba': 'BABA', 
+    'Berkshire Hathaway': 'BRK.A', 
+    'Johnson & Johnson': 'JNJ', 
+    'Visa': 'V', 
+    'Walmart': 'WMT', 
+    'Procter & Gamble': 'PG', 
+    'Mastercard': 'MA', 
+    'UnitedHealth': 'UNH', 
+    'JPMorgan Chase': 'JPM', 
+    'Taiwan Semiconductor': 'TSM', 
+    'Home Depot': 'HD', 
+    'Intel': 'INTC', 
+    'Verizon': 'VZ', 
+    'Pfizer': 'PFE', 
+    'NVIDIA': 'NVDA', 
+    'AT&T': 'T', 
+    'Merck': 'MRK', 
+    'Netflix': 'NFLX', 
+    'Disney': 'DIS', 
+    'Novartis AG': 'NVS', 
+    'Pepsi': 'PEP', 
+    'Cisco Systems': 'CSCO', 
+    'Bank of America': 'BAC', 
+    'Coca-Cola': 'KO', 
+    'ExxonMobil': 'XOM', 
+    'Adobe': 'ADBE', 
+    'PayPal': 'PYPL', 
+    'Chevron': 'CVX', 
+    'Oracle': 'ORCL', 
+    'Comcast': 'CMCSA', 
+    'Toyota': 'TM', 
+    'AbbVie': 'ABBV', 
+    'Abbott Laboratories': 'ABT', 
+    'Salesforce': 'CRM', 
+    'Eli Lilly': 'LLY', 
+    'China Mobile': 'CHL', 
+    'Tesla': 'TSLA', 
+    'Bristol-Myers Squibb': 'BMY', 
+    'Amgen': 'AMGN', 
+    'AstraZeneca': 'AZN', 
+    'Thermo Fisher Scientific': 'TMO', 
+    'Nike': 'NKE',
+    'SAP SE': 'SAP', 
+    'Costco Wholesale': 'COST', 
+    "McDonald's": 'MCD'
+}
+
+def get_price(stock):
+    sym = symbols[stock]
+    df = web.DataReader(sym, 'yahoo', '2020-05-15')
+    return df.iloc[0][['High', 'Low', 'Close', 'Open']]
+
